@@ -11,19 +11,11 @@ class Animal {
 class Herbivore extends Animal {
   hidden = false;
 
-  constructor(name) {
-    super(name);
-  }
-
   hide() {
     this.hidden = true;
   }
 }
 class Carnivore extends Animal {
-
-  constructor(name) {
-    super(name);
-  }
 
   bite(animal) {
     if (animal instanceof Herbivore && !animal.hidden) {
