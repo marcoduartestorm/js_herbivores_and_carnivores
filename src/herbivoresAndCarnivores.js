@@ -1,4 +1,5 @@
 'use strict';
+
 class Animal {
   static alive = [];
   health = 100;
@@ -8,6 +9,7 @@ class Animal {
     Animal.alive.push(this);
   }
 }
+
 class Herbivore extends Animal {
   hidden = false;
 
@@ -15,6 +17,7 @@ class Herbivore extends Animal {
     this.hidden = true;
   }
 }
+
 class Carnivore extends Animal {
 
   bite(animal) {
@@ -22,7 +25,7 @@ class Carnivore extends Animal {
       animal.health -= 50;
 
       if (animal.health <= 0) {
-        Animal.alive.filter(a => a.name === animal.name);
+        Animal.alive = Animal.alive.filter(a => a.name !== animal.name);
       }
     }
   }
